@@ -1,0 +1,110 @@
+.navbar{
+    padding: 16px 20px 12px 25px;
+    width: 100%;
+    height: 100px;
+    color: white;
+    box-shadow: 0px 4px 4px 0px #FFFFFF40;
+   position: fixed;
+   width: 100%;
+   background-color: #0F0F0F;
+}
+
+.navbar-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 61px;
+}
+
+.navbar-text{
+    font-family: "Montserrat", sans-serif;
+    
+    color: white;
+    font-weight: 600;
+    font-size: 24.6px;
+    text-align: center;
+}
+
+
+.navbar-text-span{
+    background-color: white;
+    color: #0F0F0F;
+    padding: 0 2px;
+}
+
+.navbar-navigation{
+    display: flex;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FEFEFE;
+   
+
+}
+
+.nav-arrow-image{
+    width: 15.63px;
+    height: 8px;
+}
+
+.nav-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    width: 131.63px;
+}
+
+
+.nav-box-text{
+    opacity: 50%;
+
+}
+
+.nav-profile-image{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    .navbar{
+        background-color: #2A2A2A;
+        height: 60px;
+        padding: 0px 20px;
+    box-shadow: 0px 1px 1px 0px #FFFFFF40;
+
+    }
+    .navbar-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+    }
+    .nav-box{
+        display: none;
+    gap: 0px;
+
+    }
+
+    .navbar-navigation{
+        gap: 0px;
+    }
+    .mob-nav{
+        display: flex;
+    }
+    .navbar-text{
+        font-size: 12.6px;
+    }
+
+    .nav-profile-image{
+        width: 35px;
+        height: 35px;
+        margin-left: 90px;
+    }
+    
+}
