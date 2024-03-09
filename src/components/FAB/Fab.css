@@ -6,3 +6,41 @@
     width: 60px;
     height: 60px;
 }
+
+.fabClose1{
+    width: 60px;
+    height: 60px;
+}
+
+
+.fab{
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    cursor: pointer;
+}
+.fabNav1{
+    height: 60px;
+}
+.fabDiv{
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    cursor: pointer;
+}
+
+.fabDivInner{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 70px;
+    justify-content: end;
+    align-items: end;
+}
+
+.fabFormsDiv{
+    position: fixed;
+    bottom: 26px;
+    right: 93px;
+}
+
