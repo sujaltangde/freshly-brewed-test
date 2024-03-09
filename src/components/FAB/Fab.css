@@ -44,3 +44,29 @@
     right: 93px;
 }
 
+
+.formDiv{
+    position: fixed;
+    right: 42px;
+    border-radius: 8px;
+    padding: 24px 16px;
+    bottom: 100px;
+    background-color: #F8F8F8;
+    width: 430px;
+    box-shadow: -2px 4px 16px 0px #00000029;
+}
+
+.formDiv-title{
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    padding: 0 38px;
+}
+
+.divider{
+    border: 2px solid #CCCCCC ;
+    padding-top: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}

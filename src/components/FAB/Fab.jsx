@@ -93,11 +93,11 @@ export const Fab = () => {
 
       {toggle && isAnyNavTrue() && (
         <div className="fabFormsDiv">
-          <div className="bg-white fixed right-12 bottom-32 w-80">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            aperiam facere voluptates distinctio aut voluptatum quos cumque.
-            Nesciunt ipsum inventore eaque saepe impedit? Ad deserunt eaque
-            deleniti nesciunt hic itaque.
+          <div className="formDiv">
+              <div className="formDiv-title">
+              Let us know about the <span className="font-bold">Issue</span> you are facing right now!
+              </div>
+              <div className="divider"></div>
           </div>
           <>
             {navToggle.contactUs ? (
