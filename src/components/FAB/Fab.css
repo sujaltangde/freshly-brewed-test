@@ -220,3 +220,24 @@
     right: 13px;
     bottom: 66px;
 }
+.hoverMsg2{
+    width: 340px;
+    /* height: 88px; */
+    position: fixed;
+    right: 13px;
+    bottom: 66px;
+}
+.hoverMsg3{
+    width: 357px;
+    /* height: 88px; */
+    position: fixed;
+    right: 13px;
+    bottom: 66px;
+}
+.hoverMsg4{
+    width: 416px;
+    /* height: 88px; */
+    position: fixed;
+    right: 18px;
+    bottom: 66px;
+}

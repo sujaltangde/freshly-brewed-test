@@ -13,34 +13,93 @@ export const Fab = () => {
     contactUs: false,
   });
 
-  const [reportAnIssueData, setReportAnIssue] = useState({}) ;
-  const [reportAnIssueDataSubmit, setReportAnIssueSubmit] = useState(false) ;
+  const [reportAnIssueData, setReportAnIssue] = useState({});
+  const [shareFeedbackData, setShareFeedbackData] = useState({});
+  const [suggestionData, setSuggestionData] = useState({});
+  const [contactUsData, setContactUsData] = useState({});
 
+  const [reportAnIssueDataSubmit, setReportAnIssueSubmit] = useState(false);
+  const [shareFeedbackSubmit, setShareFeedbackSubmit] = useState(false);
+  const [suggestionSubmit, setSuggestionSubmit] = useState(false);
+  const [contactUsSubmit, setContactUsSubmit] = useState(false);
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setReportAnIssueSubmit(false)
-    },2000)
-  },[reportAnIssueDataSubmit])
+  useEffect(() => {
+    setTimeout(() => {
+      setReportAnIssueSubmit(false);
+      setShareFeedbackSubmit(false);
+      setSuggestionSubmit(false);
+      setContactUsSubmit(false);
+    }, 2000);
+  }, [
+    reportAnIssueDataSubmit,
+    shareFeedbackSubmit,
+    suggestionSubmit,
+    contactUsSubmit,
+  ]);
 
+  const handleReportAnIssueSubmit = (e) => {
+    e.preventDefault();
 
-  const handleReportAnIssueSubmit = (e)=>{
-    e.preventDefault() ;
-    
-    console.log(reportAnIssueData)
+    console.log(reportAnIssueData);
 
-    setToggle(false)
-    
+    setToggle(false);
+
     setNavToggle({
       reportAnIssue: false,
       shareFeedback: false,
       giveSuggestion: false,
       contactUs: false,
-    })
-    setReportAnIssueSubmit(true)
-    
-  }
+    });
+    setReportAnIssueSubmit(true);
+  };
 
+  const handleShareFeedbackSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(shareFeedbackData);
+
+    setToggle(false);
+
+    setNavToggle({
+      reportAnIssue: false,
+      shareFeedback: false,
+      giveSuggestion: false,
+      contactUs: false,
+    });
+    setShareFeedbackSubmit(true);
+  };
+
+  const handleSuggestionSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(suggestionData);
+
+    setToggle(false);
+
+    setNavToggle({
+      reportAnIssue: false,
+      shareFeedback: false,
+      giveSuggestion: false,
+      contactUs: false,
+    });
+    setSuggestionSubmit(true);
+  };
+
+  const handleContactUsSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(contactUsData);
+
+    setToggle(false);
+
+    setNavToggle({
+      reportAnIssue: false,
+      shareFeedback: false,
+      giveSuggestion: false,
+      contactUs: false,
+    });
+    setContactUsSubmit(true);
+  };
 
   const isAnyNavTrue = () => {
     if (
@@ -83,7 +142,7 @@ export const Fab = () => {
 
   return (
     <>
-      <div className="fabDiv">
+      <div className="fabDiv  md:flex hidden ">
         {toggle && !isAnyNavTrue() && (
           <div className="fabDivInner">
             <button>
@@ -123,7 +182,7 @@ export const Fab = () => {
       </div>
 
       {toggle && isAnyNavTrue() && (
-        <div className="fabFormsDiv">
+        <div className="fabFormsDiv md:flex hidden ">
           {/* Issue */}
           {navToggle.reportAnIssue && (
             <div className="formDiv">
@@ -133,7 +192,10 @@ export const Fab = () => {
               </div>
               <div className="divider"></div>
 
-              <form onSubmit={handleReportAnIssueSubmit} className="formDiv-mainForm">
+              <form
+                onSubmit={handleReportAnIssueSubmit}
+                className="formDiv-mainForm"
+              >
                 <div className="formDiv-mainForm-div1">
                   <p className="dropdown-label">Choose a section</p>
                   {/* <img
@@ -145,12 +207,17 @@ export const Fab = () => {
                    <option value="">He</option>
                  </select> **/}
 
-                  <select onChange={(e)=>{
-                    setReportAnIssue({
-                      ...reportAnIssueData,
-                      selectValue: e.target.value
-                    })
-                  }} name="cars" className="dropdown" id="cars">
+                  <select
+                    onChange={(e) => {
+                      setReportAnIssue({
+                        ...reportAnIssueData,
+                        selectValue: e.target.value,
+                      });
+                    }}
+                    name="cars"
+                    className="dropdown"
+                    id="cars"
+                  >
                     <option value="Interview Questions">
                       Interview Questions
                     </option>
@@ -171,11 +238,11 @@ export const Fab = () => {
                   <div className="textareaDiv">
                     <textarea
                       required
-                      onChange={(e)=>{
+                      onChange={(e) => {
                         setReportAnIssue({
                           ...reportAnIssueData,
-                          message: e.target.value
-                        })
+                          message: e.target.value,
+                        });
                       }}
                       className="textArea"
                       placeholder="Write here..."
@@ -192,13 +259,12 @@ export const Fab = () => {
                       </p>
                       <div>
                         <input
-                        onChange={(e)=>{
-                        
-                          setReportAnIssue({
-                            ...reportAnIssueData,
-                            message: e.target.value
-                          })
-                        }}
+                          onChange={(e) => {
+                            setReportAnIssue({
+                              ...reportAnIssueData,
+                              message: e.target.value,
+                            });
+                          }}
                           type="text"
                           placeholder="Enter your Email"
                           className="email"
@@ -208,7 +274,7 @@ export const Fab = () => {
                   )}
 
                   <div type="submit" className="submitButtonDiv">
-                    <button className="submitButton"  >Submit</button>
+                    <button className="submitButton">Submit</button>
                   </div>
                 </div>
               </form>
@@ -217,7 +283,7 @@ export const Fab = () => {
 
           {/* Feedback */}
           {navToggle.shareFeedback && (
-            <div className="formDiv">
+            <form onSubmit={handleShareFeedbackSubmit} className="formDiv">
               <div className="formDiv-title">
                 Let us know your <span className="font-bold">Feedback</span>{" "}
                 about us!
@@ -228,6 +294,12 @@ export const Fab = () => {
                 <div className="formDiv-mainForm-div2">
                   <div className="textareaDiv">
                     <textarea
+                      onChange={() => {
+                        setShareFeedbackData({
+                          ...shareFeedbackData,
+                          text: e.target.value,
+                        });
+                      }}
                       required
                       className="textArea"
                       placeholder="Write here..."
@@ -252,17 +324,17 @@ export const Fab = () => {
                     </div>
                   )}
 
-                  <div className="submitButtonDiv">
+                  <div type="submit" className="submitButtonDiv">
                     <button className="submitButton">Submit</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           )}
 
           {/* Suggestion */}
           {navToggle.giveSuggestion && (
-            <div className="formDiv">
+            <form onSubmit={handleSuggestionSubmit} className="formDiv">
               <div className="formDiv-title">
                 Share your <span className="font-bold">Suggestions</span> with
                 us for a chance to earn rewards!
@@ -302,6 +374,12 @@ export const Fab = () => {
                   <div className="textareaDiv">
                     <textarea
                       required
+                      onChange={(e) => {
+                        setSuggestionData({
+                          ...suggestionData,
+                          text: e.target.value,
+                        });
+                      }}
                       className="textArea"
                       placeholder="Write here..."
                     ></textarea>
@@ -325,16 +403,17 @@ export const Fab = () => {
                     </div>
                   )}
 
-                  <div className="submitButtonDiv">
+                  <div type="submit" className="submitButtonDiv">
                     <button className="submitButton">Submit</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           )}
+
           {/* Contact Us */}
           {navToggle.contactUs && (
-            <div className="formDiv">
+            <form onSubmit={handleContactUsSubmit} className="formDiv">
               <div className="formDiv-title">
                 Let us know what your <span className="font-bold">queries</span>{" "}
                 with us for are
@@ -382,6 +461,12 @@ export const Fab = () => {
                   <div className="textareaDiv">
                     <textarea
                       required
+                      onChange={(e) => {
+                        setContactUsData({
+                          ...contactUsData,
+                          text: e.target.value,
+                        });
+                      }}
                       className="textArea1"
                       placeholder="Write here..."
                     ></textarea>
@@ -391,12 +476,12 @@ export const Fab = () => {
                     </button>
                   </div>
 
-                  <div className="submitButtonDiv1">
+                  <div type="submit" className="submitButtonDiv1">
                     <button className="submitButton">Submit</button>
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           )}
 
           <>
@@ -475,11 +560,19 @@ export const Fab = () => {
         </div>
       )}
 
-      <button className="fab">
-{reportAnIssueDataSubmit && 
-
-  <img src="/images/hoverMsg1.png" className="hoverMsg1" alt="" />
-}
+      <button className="fab md:flex hidden">
+        {reportAnIssueDataSubmit && (
+          <img src="/images/hoverMsg1.png" className="hoverMsg1" alt="" />
+        )}
+        {shareFeedbackSubmit && (
+          <img src="/images/hoverMsg2.png" className="hoverMsg2" alt="" />
+        )}
+        {suggestionSubmit && (
+          <img src="/images/hoverMsg3.png" className="hoverMsg3" alt="" />
+        )}
+        {contactUsSubmit && (
+          <img src="/images/hoverMsg4.png" className="hoverMsg4" alt="" />
+        )}
 
         {toggle ? (
           <>

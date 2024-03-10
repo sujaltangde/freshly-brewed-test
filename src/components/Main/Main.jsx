@@ -1,6 +1,7 @@
 import React from "react";
 import "./Main.css";
 import { Fab } from "../FAB/Fab";
+import { FabMob } from "../FAB/FabMob";
 
 export const Main = () => {
   return (
@@ -370,6 +371,7 @@ export const Main = () => {
       <div>
 
         <Fab/>
+        <FabMob/>
       </div>
     </>
   );
